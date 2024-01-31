@@ -1,0 +1,38 @@
+.task {
+    background-color: rgb(255, 223, 251);
+    height: auto;
+    width: 600px;
+    height: 80px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between; /* מפריד בין החלק השמאלי לימני */
+    align-items: center;
+}
+
+.leftSide {
+    display: flex;
+    align-items: center;
+}
+
+.rightSide {
+    display: flex;
+}
+
+.buttonTask {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #503c4a;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.25s, border-color 0.25s;
+    margin-left: 10px; /* מרווח בין הכפתורים */
+}
+
+.buttonTask:hover {
+    background-color: #7e436d;
+}
