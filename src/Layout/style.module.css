@@ -1,0 +1,11 @@
+body{
+    font-family: 'Quicksand', sans-serif;
+}
+
+.layout{
+    display: flex;
+}
+
+.list{
+    padding: 50px;
+}
