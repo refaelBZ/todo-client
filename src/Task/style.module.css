@@ -1,5 +1,6 @@
 .task {
-    background-color: rgb(255, 223, 251);
+    background-color: rgb(255, 255, 255);
+    font-weight: 600;
     height: auto;
     width: 600px;
     height: 80px;
@@ -8,31 +9,117 @@
     display: flex;
     justify-content: space-between; /* מפריד בין החלק השמאלי לימני */
     align-items: center;
+    box-shadow: -1px 17px 76px -10px #F1EAFF;
+
+}
+
+
+.task:hover {
+    background-color: #F1EAFF;
+    box-shadow: none;
+
 }
 
 .leftSide {
     display: flex;
-    align-items: center;
+    align-items: center; /* ממשיך ליישר אנכית למרכז */
 }
+
+.textAndTimer {
+    display: flex;
+    flex-direction: column; /* מסדר את הטקסט והטיימר אחד מעל השני */
+    margin-left: 10px; /* מוסיף מרווח בין ה-checkbox לטקסט והטיימר */
+}
+
+
+.timer {
+    margin-top: 5px; /* מוסיף מרווח מעט מעל הטיימר כדי להפריד בין השם לטיימר */
+}
+
+.customCheckbox {
+    margin-bottom: 10px; /* אם רוצים להוסיף מרווח בין ה-checkbox לשם */
+}
+
 
 .rightSide {
     display: flex;
 }
 
 .buttonTask {
-    border-radius: 8px;
-    border: 1px solid transparent;
+    border: none; /* או 1px solid transparent לשמירה על גודל ללא גבול נראה */
     padding: 0.6em 1.2em;
     font-size: 1em;
     font-weight: 500;
     font-family: inherit;
-    background-color: #503c4a;
-    color: white;
+    background-color: transparent; /* הופך את הרקע לשקוף */
+    color: #c2b3d3; /* צבע הטקסט והאייקון */
     cursor: pointer;
-    transition: background-color 0.25s, border-color 0.25s;
+    transition: color 0.25s; /* תוסיף transition לצבע אם אתה משנה את צבע האייקון ב:hover */
     margin-left: 10px; /* מרווח בין הכפתורים */
 }
 
 .buttonTask:hover {
-    background-color: #7e436d;
+    color: #7e436d; /* שינוי צבע האייקון ב-hover, אם רוצים */
 }
+
+
+
+
+/* סגנון ה-label וה-checkmark */
+.customCheckbox {
+  display: inline-block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  user-select: none; /* מונע בחירה בטקסט */
+}
+
+
+
+/* הסתרת תיבת הסימון המקורית */
+.customCheckbox input[type="checkbox"] {
+  visibility: hidden;
+  position: absolute;
+}
+
+/* יצירת תיבה שתשמש כ-checkmark מותאם אישית */
+.customCheckbox .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #F1EAFF;
+  border-radius: 4px;
+}
+
+/* כאשר המשתמש מסמן את ה-checkbox, הצג את ה-checkmark */
+.customCheckbox input[type="checkbox"]:checked + .checkmark {
+  background-color: #D0A2F7;
+}
+
+/* יצירת הסימן של ה-checkmark */
+.customCheckbox .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* כאשר ה-checkbox מסומן, הצג את הסימן */
+.customCheckbox input[type="checkbox"]:checked + .checkmark:after {
+  display: block;
+}
+
+/* סגנון הסימן (יכול להיות מותאם אישית) */
+.customCheckbox .checkmark:after {
+  left: 5px;
+  right: 5px;
+  top: 5px;
+  width: 8px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+
