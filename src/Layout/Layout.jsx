@@ -6,30 +6,10 @@ import Sidebar from '../SIdebar/Sidebar.jsx';
 import styles from "./style.module.css";
 
 
-const tasks=[
-    {
-        name: "TODO NOW",
-        date: new Date,
-        id: "1237774",
-        status: "active"
-    },
-  
-    {
-        name: "Test",
-        date: new Date,
-        id: "1234",
-        status: "active"
-    },
-    {
-        name: "TODO",
-        date: new Date,
-        id: "12",
-        status: "active"
-    }
-  ]
+
 
 export default function Layout() {
-  const [tasksList, setTasksList] = useState(tasks);
+  const [tasksList, setTasksList] = useState([]);
 
   return (
     <TasksContext.Provider value={{ tasksList, setTasksList }}>

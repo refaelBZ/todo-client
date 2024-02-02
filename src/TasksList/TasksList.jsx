@@ -20,11 +20,15 @@ const { tasksList, setTasksList } = useContext(TasksContext);
 
 
 // קבלת רשימת המשימות בטעינה הראשונית
-    useEffect(() => {
-        axios.get("http://localhost:2004/task")
-            .then(response => setTasksList(response.data))
-            .catch(error => console.error(error));
-    }, []);
+useEffect(() => {
+  axios.get("http://localhost:2004/task")
+      .then(response => {
+          console.log(response.data); // הוסף הדפסה לקונסול כאן
+          setTasksList(response.data);
+      })
+      .catch(error => console.error(error));
+}, []);
+
 
 
     return (
